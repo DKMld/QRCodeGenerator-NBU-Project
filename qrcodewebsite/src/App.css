@@ -84,6 +84,23 @@
   font-weight: 500;
 }
 
+.qr-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.qr-highlights span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3366ff;
+  background: #eef3ff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(51, 102, 255, 0.15);
+}
+
 .brand {
   color: #3366ff;
   font-weight: 700;
@@ -114,6 +131,89 @@
 .qr-form { display:flex; flex-direction: column; gap: 12px }
 
 .input-row { display:flex; gap:8px; align-items:center }
+
+.email-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #32405f;
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #8a96a8;
+}
+
+.field-error {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #d94848;
+  font-weight: 600;
+}
+
+.qr-input-error {
+  border-color: #ffb4b4;
+  box-shadow: inset 0 2px 4px rgba(217, 72, 72, 0.1), 0 0 0 3px rgba(217, 72, 72, 0.1) !important;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(51, 102, 255, 0.12);
+  background: #f5f8ff;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #2f3b56;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle-ui {
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: #c9d7ff;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.toggle-ui::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggle input:checked + .toggle-ui {
+  background: #3366ff;
+}
+
+.toggle input:checked + .toggle-ui::after {
+  transform: translateX(16px);
+}
 
 .btn-ghost {
   background: linear-gradient(135deg, #f0f4ff 0%, #f8faff 100%);
@@ -203,6 +303,13 @@
 
 .btn-primary:active {
   transform: translateY(-1px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
 }
 
 .qr-card {
